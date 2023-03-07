@@ -1,4 +1,4 @@
-# VideoCampus Sachsen Downloader - Improved for AMD Graphics Cards
+# VideoCampus Sachsen Downloader - Improved Version
 This is a fork of the [VideoCampus Sachsen Downloade by spylfy](https://github.com/spyfly/videocampus-sachsen-downloader).
 
 This is a tool designed for downloading content from the [VideoCampus Sachsen](https://videocampus.sachsen.de/) and learning plattforms that rely on it, such as [Bildungsportal Sachsen - OPAL](https://bildungsportal.sachsen.de/opal).
@@ -8,14 +8,14 @@ With this tool you can download the lecture videos and learn at your own pace, a
 If you enjoy using this tool, leave a star on GitHub.
 
 ## What is different?
-It is a heavily improved version. It **downloads 16x time faster and encodes your video to space-saving [HEVC](https://de.wikipedia.org/wiki/High_Efficiency_Video_Coding) accelerated by your AMD Graphics Card**. This means: Great quality by only using ~300 MB for 90 minutes of video.
+It is a heavily improved version. It **downloads 16x time faster and optional encodes your video to space-saving [HEVC](https://de.wikipedia.org/wiki/High_Efficiency_Video_Coding) accelerated by your AMD Graphics Card**. This means: Great quality by only using ~200 MB for 90 minutes of video.
 
 ## What do I need to run your python script?
 Not much. You will need:
 - Linux
 - Python 3.6 or higher with pip3 and ffmpeg
 - If you want to profit from the lightning fast video encoding: AMD Radeon Series 400 or higher
-- If you do not own such a graphics card replace ffmpeg inside the python file with the following line:`ffmpeg = ["ffmpeg", "-f", "concat", "-i", "ts_file.txt", "-map", "0", "-c:a", "copy", "-c:v", "libx265", "-crf", "25", "-preset", "slow", filename]`
+- If you do not own such a graphics card see FAQ
 
 
 ## Installation

@@ -65,7 +65,8 @@ with open("ts_file.txt", "w", encoding='utf-8') as ts_file:
     for line in ts_list:
         ts_file.write(f"file {line}\n")
 
-ffmpeg = ["ffmpeg", "-f", "concat", "-vaapi_device", "/dev/dri/renderD128", "-i", "ts_file.txt", "-vf", 'format=nv12,hwupload', "-map", "0", "-c:a", "copy", "-c:v", "hevc_vaapi", "-crf", "25", "-preset", "slow", filename]
+#ffmpeg = ["ffmpeg", "-f", "concat", "-i", "ts_file.txt", "-map", "0", "-c:a", "copy", "-c:v", "libx265", "-crf", "25", "-preset", "slow", filename]
+ffmpeg = ["ffmpeg", "-f", "concat", "-i", "ts_file.txt", "-map", "0", "-c", "copy", filename]
 subprocess.run(ffmpeg)
 
 # clean up
