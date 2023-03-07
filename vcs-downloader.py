@@ -59,7 +59,7 @@ else:
     filename = input("Output name: ")
 
 print("Starting download. Might take some time...")
-#Parallel(n_jobs=16)(delayed(download_part)(file) for file in ts_list)
+Parallel(n_jobs=16)(delayed(download_part)(file) for file in ts_list)
 
 with open("ts_file.txt", "w", encoding='utf-8') as ts_file:
     for line in ts_list:
@@ -69,7 +69,7 @@ ffmpeg = ["ffmpeg", "-f", "concat", "-vaapi_device", "/dev/dri/renderD128", "-i"
 subprocess.run(ffmpeg)
 
 # clean up
-#dir_list = os.listdir(".")
-#or file in dir_list:
-#    if file.endswith(".ts"):
- #       os.remove(file)
+dir_list = os.listdir(".")
+for file in dir_list:
+    if file.endswith(".ts"):
+        os.remove(file)
