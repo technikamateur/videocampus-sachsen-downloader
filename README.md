@@ -23,7 +23,7 @@ Not much. You will need:
 3. Clone this repo and enter the directory
 4. Create a python venv `python3 -m venv venv`, because you don't want to install pip packages system-wide
 5. Start your venv `source venv/bin/activate`
-6. Run `pip3 install joblib`
+6. Run `pip3 install joblib tqdm`
 
 
 ## CLI Usage
@@ -32,7 +32,7 @@ Not much. You will need:
 
 ## Retrieving the video stream URL
 1. Open the console of your browser (F12) and select the Network Inspector Tab
-2. Select the XHR request type and start playing the Video
+2. Select the XHR request type, start playing the Video **and select the quality quality of your choice in the player window**.
 3. Now right click one of the marked URL with a *.m3u8* file extension and copy the URL as seen on the image below.
 
 ![Example](./example.png "Network Inspector Example")

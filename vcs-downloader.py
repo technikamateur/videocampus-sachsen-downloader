@@ -4,6 +4,7 @@ import ssl
 from joblib import Parallel, delayed
 import subprocess
 import os
+from tqdm import tqdm
 
 ts_list = list()
 context = ssl._create_unverified_context()
@@ -59,7 +60,7 @@ else:
     filename = input("Output name: ")
 
 print("Starting download. Might take some time...")
-Parallel(n_jobs=16)(delayed(download_part)(file) for file in ts_list)
+Parallel(n_jobs=16)(delayed(download_part)(file) for file in tqdm(ts_list))
 
 with open("ts_file.txt", "w", encoding='utf-8') as ts_file:
     for line in ts_list:
